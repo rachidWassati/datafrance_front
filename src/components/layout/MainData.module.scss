@@ -1,0 +1,24 @@
+@use '../../assets/styles/mixins' as mixin;
+
+.container {
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    width: 20%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+
+    @include mixin.xs {
+        width: 100%;
+        height: 20vh;
+    }
+
+    @include mixin.sm {
+        width: 100%;
+        height: 20vh;
+    }
+
+    @include mixin.md {
+        width: 100%;
+        height: 20vh;
+    }
+}

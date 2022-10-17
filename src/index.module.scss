@@ -1,0 +1,18 @@
+@use './assets/styles/mixins' as mixin;
+
+.wrapper {
+    display: flex;
+    width: 100%;
+
+    @include mixin.xs {
+        flex-direction: column;
+    }
+
+    @include mixin.sm {
+        flex-direction: column;
+    }
+
+    @include mixin.md {
+        flex-direction: column;
+    }
+}
