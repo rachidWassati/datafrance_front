@@ -5,7 +5,11 @@
     width: 20%;
     height: 100vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
+
+
 
     @include mixin.xs {
         width: 100%;

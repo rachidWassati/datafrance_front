@@ -14,7 +14,6 @@ const Search: React.FC<SearchProps> = ({selectedCity, onSelectedChange}) => {
     const [isLoaded, setIsLoaded] = useState(false);
     const [term, setTerm] = useState('');
     const [results, setResults] = useState([]);
-    // const [citySelected, setCitySelected] = useState('');
     const [open, setOpen] = useState(false);
 
     useEffect(() => {

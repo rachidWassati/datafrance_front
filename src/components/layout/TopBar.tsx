@@ -3,12 +3,18 @@ import {Dropdown} from "../bases/Dropdown";
 import Search from "../bases/Search";
 import styles from "./TopBar.module.scss";
 
+interface TopBarProps {
+    selectedCity: string,
+    onSelectedCityChange: Function,
+    onSelectedCategoryChange: Function
+}
 
-export default function TopBar() {
+
+const TopBar: React.FC<TopBarProps> = ({selectedCity, onSelectedCityChange, onSelectedCategoryChange}) =>{
 
     const [error, setError] = useState(null);
     const [isLoaded, setIsLoaded] = useState(false);
-    const [selectedCity, setSelectedCity] = useState('');
+    // const [selectedCity, setSelectedCity] = useState('');
     const [categories, setCategories] = useState([]);
 
     useEffect(() => {
@@ -32,13 +38,15 @@ export default function TopBar() {
         <div className= { styles.container }>
             <Search 
                 selectedCity= {selectedCity}
-                onSelectedChange= {setSelectedCity}
+                onSelectedChange= {onSelectedCityChange}
                 />
             <Dropdown
                 options={['Choisissez une catégorie...', ...categories]} 
                 selected= {selectedGraphe} 
-                onSelectedChange= {setSelectedGraphe} 
+                onSelectedChange= {onSelectedCategoryChange} 
             />
         </div>
     )
 }
+
+export default TopBar

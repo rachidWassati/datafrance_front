@@ -1,0 +1,18 @@
+@use '../../assets/styles/variables';
+@use '../../assets/styles/mixins' as mixin;
+
+.element {
+    padding: 1.2rem 0;
+    margin: 1.5rem;
+    height: 30vh;
+    width: 30%;
+    text-align: center;
+    border: 1px solid var(--primary-dark);
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    border-radius: 15px;
+
+    @include mixin.sm-lt {
+        width: 100%;
+    }
+    
+}

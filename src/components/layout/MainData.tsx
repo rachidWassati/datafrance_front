@@ -1,9 +1,17 @@
 import styles from './MainData.module.scss';
 
-export const MainData = () => {
+interface MainDataProps {
+    city: string,
+    category: string
+}
+
+const MainData: React.FC<MainDataProps> = ({city, category}) => {
     return (
         <div className={styles.container}>
-            <h1>Main Data</h1>
+            <h1>{city.split('(')[0]}</h1>
+            <h3>{category}</h3>
         </div>
     )
 }
+
+export default MainData;
