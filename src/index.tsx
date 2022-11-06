@@ -8,13 +8,14 @@ import styles from './index.module.scss';
 
 
 const App = () => {
-    const [selectedCity, setSelectedCity] = useState('');
-    const [selectedCategory, setSelectedCategory] = useState('');
+    const [selectedCity, setSelectedCity] = useState('Paris (75000)');
+    const [selectedCategory, setSelectedCategory] = useState('Démographie');
 
     return (
         <div className={styles.container}>
             <TopBar 
                 selectedCity= {selectedCity}
+                selectedCategory= {selectedCategory}
                 onSelectedCityChange = {setSelectedCity}
                 onSelectedCategoryChange = {setSelectedCategory}
             />
@@ -23,7 +24,7 @@ const App = () => {
                     city= {selectedCity}
                     category = {selectedCategory}
                 />
-                <Graphes />
+                {/* <Graphes /> */}
             </div>
         </div>
     )

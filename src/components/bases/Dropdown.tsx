@@ -2,17 +2,15 @@ import styles from './Dropdown.module.scss';
 
 interface OptionsProps {
     options: string[];
-    selected: string;
     onSelectedChange: Function;
 }
 
-export const Dropdown: React.FC<OptionsProps> = ({options, selected, onSelectedChange}) => {
+export const Dropdown: React.FC<OptionsProps> = ({options, onSelectedChange}) => {
 
-    const renderedVilles = options.map(
+    const renderedOptions = options.map(
         (option) => {
             return (
-                <option 
-                    onClick={() => onSelectedChange(option)}
+                <option
                     key={option} 
                     value={option}>{option}</option>
             )
@@ -21,8 +19,13 @@ export const Dropdown: React.FC<OptionsProps> = ({options, selected, onSelectedC
 
     return (
         <div className={styles.form}>
-            <select name="villes" id="villes">
-                {renderedVilles}
+            <select name="categories" id="categories" onChange={
+                (event) => {
+                    console.log(event.target.value)
+                    onSelectedChange(event.target.value)
+                }
+            }>
+                {renderedOptions}
             </select>
         </div>
     )
